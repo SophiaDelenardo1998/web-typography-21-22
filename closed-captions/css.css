@@ -17,100 +17,293 @@ Feel free to adjust the defaults to your needs.
 	transition: .2s;
 	opacity: 0;
 }
-.voice1 {
-	font-style: italic;
+
+
+#video-placeholder{
+	display: flex;
+	margin: 0 auto;
+	margin-top: 8em;
 }
 
+#closed-captions{
+	display: flex;
+justify-content: center;
+}
+
+
+body{
+background-color: black;
+}
 /* **********************************************
-The first paragraph, with extended timing for 
+The first paragraph, with extended timing for
 	all siblings. Basically what it does is that
-	it shows the text after a delay, which 
+	it shows the text after a delay, which
 	corresponds with the time that the word is
 	spoken.
 You probably want to change the styling.
 ********************************************** */
-.p0 span {
-	opacity: 0;
-	font-family: brenner;
-}
-.p0.on span:first-of-type {
-	opacity: 1;
-	transition: 0s;
-	font-weight: 200;
-}
-.p0.on span:nth-of-type(2) {
-	opacity: 1;
-	transition: 0s .4s;
-	margin-right: -.25em;
-	font-weight: 400;
-}
-.p0.on span:nth-of-type(3) {
-	opacity: 1;
-	transition: 0s .5s;
-	margin-right: -.25em;
-	font-weight: 600;
-}
-.p0.on span:nth-of-type(4) {
-	opacity: 1;
-	transition: 0s .7s;
-	margin-right: -.25em;
-	font-weight: 800;
-}
-.p0.on span:nth-of-type(5) {
-	opacity: 1;
-	transition: 0s 1.1s;
-	margin-right: -.25em;
-	font-family: "brenner sans";
-}
-.p0.on span:nth-of-type(6) {
-	opacity: 1;
-	transition: 0s 1.4s;
-	margin-right: -.25em;
-	font-family: "brenner display";
-}
-.p0.on span:nth-of-type(7) {
-	opacity: 1;
-	transition: 0s 1.7s;
-	margin-right: -.25em;
-	font-family: "brenner script";
-}
-.p0.on span:nth-of-type(8) {
-	opacity: 1;
-	transition: 0s 2s;
-	font-family: "brenner script";
-}
-.p0.on span:nth-of-type(9) {
-	opacity: 1;
-	transition: 0s 3s;
-	font-family: "brenner Sans condensed";
-}
-.p0.on span:nth-of-type(10) {
-	opacity: 1;
-	transition: 0s 3.2s;
-	font-family: "brenner mono";
-}
-.p0.on span:nth-of-type(11) {
-	opacity: 1;
-	transition: 0s 3.7s;
-	font-family: "brenner slab";
-}
+
+
 
 /* **********************************************
 Sounds.
-	You can style the whole body, or you can 
+	You can style the whole body, or you can
 	style anything within the body the moment
 	a sound starts.
 *********************************************  */
-
-/* The moment the class .sound1 is added to the body, the background is yellow */
-.sound1 {
-	background: yellow;
+.voice1{
+	color: #87a0b2;
+	font-family: "brenner mono";
+	font-size: 15px;
+	position: absolute;
+	left: 430px;
+	transition: 0s .4s;
 }
 
-iframe {
+.voice2{
+	color: #ffff;
+	font-family: "brenner sans";
+	font-size: 15px;
+	position: absolute;
+	right: 430px;
+	transition: 0s .4s;
+}
+
+.voice3{
+	color: #fe7f2d;
+	font-family: "brenner sans condensed";
+	font-size: 15px;
+}
+
+.voice4{
+	color: yellow;
+	font-size: 20px;
+	font-family: "brenner sans";
+
+}
+
+
+
+
+
+/* alarm visualisatie */
+.sound1{
+	animation-name: alarm;
+	animation-duration: 1s;
+}
+
+@keyframes alarm {
+	0%{
+	background:red;
+	}
+
+	25%{
+		background:black;
+	}
+
+	50%{
+		background:red;
+	}
+
+	75%{
+		background:black;
+	}
+
+	100%{
+		background:black;
+	}
+}
+
+iframe{
 	transition: 1s;
+	z-index: 1;
+	position: relative;
+	clip-path: inset(4.81em -100px);
+
 }
-/* The moment the class .sound1 is added to the body, the movie makes a turn */
-.sound1 iframe {
-	transform: rotate(1turn);
+
+.sound2{
+	animation-name: alarm2;
+	animation-duration: 1s;
+}
+
+@keyframes alarm2 {
+	0%{
+	background:red;
+	}
+
+	30%{
+		background:black;
+	}
+
+	40%{
+		background:red;
+	}
+
+	50%{
+		background:black;
+	}
+
+
+	75%{
+		background:red;
+	}
+
+	100%{
+		background:black;
+	}
+}
+
+.sound4{
+	animation-name: alarm4;
+	animation-duration: 1s;
+}
+
+@keyframes alarm4 {
+	0%{
+	background:red;
+	}
+
+	30%{
+		background:black;
+	}
+
+	40%{
+		background:red;
+	}
+
+	50%{
+		background:black;
+	}
+
+
+	75%{
+		background:red;
+	}
+
+	100%{
+		background:black;
+	}
+}
+.sound6{
+	animation-name: alarm6;
+	animation-duration: 1s;
+}
+
+@keyframes alarm6 {
+	0%{
+	background:red;
+	}
+
+	40%{
+		background:black;
+	}
+
+	75%{
+		background:red;
+	}
+
+	100%{
+		background:black;
+	}
+}
+
+.sound7::before {
+    content: '';
+    position: absolute;
+    bottom: 30rem;
+    width: 30em;
+    height: 0.25em;
+    background-color: #ffd23f;
+    animation-name: lijn;
+		animation: lijn 10s linear forwards;
+
+}
+
+@keyframes lijn {
+    0% {
+        left: 0%;
+    }
+
+    10% {
+        left: 67%;
+    }
+
+    20% {
+        left: 0%;
+    }
+
+    30% {
+        left: 67%;
+    }
+
+    40% {
+        left: 0%;
+    }
+
+    50% {
+        left: 67%;
+    }
+
+    60% {
+        left: 0%;
+    }
+
+    70% {
+        left: 67%;
+    }
+
+    80% {
+        left: 0%;
+    }
+
+    90% {
+        left: 67%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+.sound8 {
+    animation-name: zoom-in-zoom-out;
+    animation-duration: 14s;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+		100%{
+			transform: scale(1, 1);
+		}
+
+
+}
+
+.sound9 {
+    animation-name: zoom-in-zoom-out1;
+    animation-duration: 20s;
+}
+
+@keyframes zoom-in-zoom-out1 {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+		100%{
+			transform: scale(1, 1);
+		}
+
+
 }
