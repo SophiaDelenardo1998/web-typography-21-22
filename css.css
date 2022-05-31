@@ -1,0 +1,250 @@
+/* **********************************************
+Basic mechanics
+Hide all paragraphs by default
+Show them when they receive the class 'on'
+Hide them when they receive the class 'off'
+Feel free to adjust the defaults to your needs.
+********************************************** */
+#closed-captions p {
+	opacity: 0;
+	transition: .05s;
+	position: absolute;
+}
+#closed-captions .on {
+	opacity: 1;
+}
+#closed-captions .off {
+	transition: .2s;
+	opacity: 0;
+}
+
+
+#video-placeholder{
+	display: flex;
+	margin: 0 auto;
+	margin-top: 8em;
+}
+
+#closed-captions{
+	display: flex;
+justify-content: center;
+}
+
+
+body{
+background-color: black;
+}
+/* **********************************************
+The first paragraph, with extended timing for
+	all siblings. Basically what it does is that
+	it shows the text after a delay, which
+	corresponds with the time that the word is
+	spoken.
+You probably want to change the styling.
+********************************************** */
+
+
+
+/* **********************************************
+Sounds.
+	You can style the whole body, or you can
+	style anything within the body the moment
+	a sound starts.
+*********************************************  */
+
+iframe{
+	transition: 1s;
+	z-index: 1;
+	position: relative;
+	clip-path: inset(4.81em -100px);
+
+
+
+
+
+.voice1{
+	color: #87a0b2;
+	font-family: "brenner mono";
+	font-size: 15px;
+	position: absolute;
+	left: 430px;
+	transition: 0s .4s;
+}
+
+.voice2{
+	color: #ffff;
+	font-family: "brenner sans";
+	font-size: 15px;
+	position: absolute;
+	right: 430px;
+	transition: 0s .4s;
+}
+
+.voice3{
+	color: #fe7f2d;
+	font-family: "brenner sans condensed";
+	font-size: 15px;
+}
+
+.voice4{
+	color: yellow;
+	font-size: 20px;
+	font-family: "brenner sans";
+
+}
+
+
+
+
+
+/* alarm visualisatie */
+.sound1{
+	animation-name: alarm;
+	animation-duration: 1s;
+}
+
+@keyframes alarm {
+	0%{
+	background:red;
+	}
+
+	25%{
+		background:black;
+	}
+
+	50%{
+		background:red;
+	}
+
+	75%{
+		background:black;
+	}
+
+	100%{
+		background:black;
+	}
+}
+
+
+
+}
+
+.sound2{
+	animation-name: alarm2;
+	animation-duration: 1s;
+}
+
+@keyframes alarm2 {
+	0%{
+	background:red;
+	}
+
+	30%{
+		background:black;
+	}
+
+	40%{
+		background:red;
+	}
+
+	50%{
+		background:black;
+	}
+
+
+	75%{
+		background:red;
+	}
+
+	100%{
+		background:black;
+	}
+}
+
+.sound4{
+	animation-name: alarm4;
+	animation-duration: 1s;
+}
+
+@keyframes alarm4 {
+	0%{
+	background:red;
+	}
+
+	30%{
+		background:black;
+	}
+
+	40%{
+		background:red;
+	}
+
+	50%{
+		background:black;
+	}
+
+
+	75%{
+		background:red;
+	}
+
+	100%{
+		background:black;
+	}
+}
+.sound6{
+	animation-name: alarm6;
+	animation-duration: 1s;
+}
+
+@keyframes alarm6 {
+	0%{
+	background:red;
+	}
+
+	40%{
+		background:black;
+	}
+
+	75%{
+		background:red;
+	}
+
+	100%{
+		background:black;
+	}
+}
+
+
+/* lange piep visualisatie */
+.sound5{
+	animation-name:effectpiep, zoom;
+	animation-duration: 52s, 16s;
+	animation-delay: 0s, 46s
+}
+
+@keyframes effectpiep {
+	0%{
+			background-color: black;
+	}
+
+	100%{
+		background-color: #fc2f00;
+	}
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+		100%{
+			transform: scale(1, 1);
+		}
+
+
+}
