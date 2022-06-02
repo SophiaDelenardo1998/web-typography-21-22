@@ -51,6 +51,17 @@ Sounds.
 	style anything within the body the moment
 	a sound starts.
 *********************************************  */
+
+iframe{
+	transition: 1s;
+	z-index: 1;
+	position: relative;
+	clip-path: inset(4.81em -100px);
+}
+
+
+
+
 .voice1{
 	color: #87a0b2;
 	font-family: "brenner mono";
@@ -114,11 +125,7 @@ Sounds.
 	}
 }
 
-iframe{
-	transition: 1s;
-	z-index: 1;
-	position: relative;
-	clip-path: inset(4.81em -100px);
+
 
 }
 
@@ -208,70 +215,25 @@ iframe{
 	}
 }
 
-.sound7::before {
-    content: '';
-    position: absolute;
-    bottom: 30rem;
-    width: 30em;
-    height: 0.25em;
-    background-color: #ffd23f;
-    animation-name: lijn;
-		animation: lijn 10s linear forwards;
 
+/* lange piep visualisatie */
+.sound5{
+	animation-name:effectpiep, zoom, schudden;
+	animation-duration: 52s, 16s,0.5s ;
+	animation-delay: 0s, 46s,52s;
 }
 
-@keyframes lijn {
-    0% {
-        left: 0%;
-    }
+@keyframes effectpiep {
+	0%{
+			background-color: black;
+	}
 
-    10% {
-        left: 67%;
-    }
-
-    20% {
-        left: 0%;
-    }
-
-    30% {
-        left: 67%;
-    }
-
-    40% {
-        left: 0%;
-    }
-
-    50% {
-        left: 67%;
-    }
-
-    60% {
-        left: 0%;
-    }
-
-    70% {
-        left: 67%;
-    }
-
-    80% {
-        left: 0%;
-    }
-
-    90% {
-        left: 67%;
-    }
-
-    100% {
-        left: 0%;
-    }
+	100%{
+		background-color: #fc2f00;
+	}
 }
 
-.sound8 {
-    animation-name: zoom-in-zoom-out;
-    animation-duration: 14s;
-}
-
-@keyframes zoom-in-zoom-out {
+@keyframes zoom {
     0% {
         transform: scale(1, 1);
     }
@@ -287,23 +249,66 @@ iframe{
 
 }
 
-.sound9 {
-    animation-name: zoom-in-zoom-out1;
-    animation-duration: 20s;
-}
+@keyframes schudden {
+	0%{
+		transform:translate(1px,1px)
+		rotate(0deg);
+	}
 
-@keyframes zoom-in-zoom-out1 {
-    0% {
-        transform: scale(1, 1);
-    }
+	10%{
+		transform:translate(-1px,-1px)
+		rotate(-1deg);
+	}
 
-    50% {
-        transform: scale(1.2, 1.2);
-    }
+	20%{
+		transform:translate(-3px,0px)
+		rotate(1deg);
+	}
 
-		100%{
-			transform: scale(1, 1);
-		}
+	30%{
+		transform:translate(3px,0px)
+		rotate(0deg);
+	}
 
+	40%{
+		transform:translate(1px,-1px)
+		rotate(1deg);
 
+	}
+
+	40%{
+		transform:translate(1px,-1px)
+		rotate(1deg);
+
+	}
+
+	50%{
+		transform:translate(-1px,2px)
+		rotate(-1deg);
+	}
+
+	60%{
+		transform:translate(-3px,1px)
+		rotate(0deg);
+	}
+
+	70%{
+		transform:translate(3px,1px)
+		rotate(-1deg);
+	}
+
+	80%{
+		transform:translate(-1px,-1px)
+		rotate(1deg);
+	}
+
+	90%{
+		transform:translate(1px,2px)
+		rotate(0deg);
+	}
+
+	100%{
+		transform:translate(1px,-2px)
+		rotate(-1deg);
+	}
 }
